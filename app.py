@@ -23,11 +23,12 @@ DATA_URL = (f"https://github.com/hamidpy/airport-service-analysis-data-science-a
 #@st.cache(persist=True) # for cache ta csv file for load fasting tha app
 def load_data():
     try:
-        data = pd.read_csv(DATA_URL, error_bad_lines=False, nrows=1000)
+        data = pd.read_csv(DATA_URL, error_bad_lines=False, names=['id', 'text', 'tweet_created'])
     except pd.errors.ParserError:
-        data = pd.read_csv(DATA_URL, error_bad_lines=False)
+        data = pd.read_csv(DATA_URL, error_bad_lines=False, names=['id', 'text', 'tweet_created'], engine='python')
     data['tweet_created'] = pd.to_datetime(data['tweet_created'])
     return data
+
 
 data = load_data()
 
