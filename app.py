@@ -17,7 +17,7 @@ st.markdown("This application is a Streamlit Dashboard to analyze the sentiment 
 st.sidebar.markdown("This application is a Streamlit Dashboard to analyze the sentiment of Tweets")
 
 # Csv file url set
-DATA_URL = (f"C:/Users/HAMID/PycharmProjects/accidentAnalysisApp_2/build/Tweets.csv")
+DATA_URL = (f"https://github.com/hamidpy/airport-service-analysis-data-science-application/blob/main/Tweets.csv")
 
 # load the data
 #@st.cache(persist=True) # for cache ta csv file for load fasting tha app
